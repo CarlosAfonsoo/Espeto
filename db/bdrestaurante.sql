@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/11/2023 às 23:02
+-- Tempo de geração: 26/11/2023 às 21:06
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -72,7 +72,7 @@ INSERT INTO `tbespetos` (`idespetos`, `nomeespetos`, `precUnitespetos`, `descesp
 --
 
 CREATE TABLE `tbpedido` (
-  `idpedido` int(11) DEFAULT NULL,
+  `idpedido` int(11) NOT NULL,
   `idespetos` int(11) DEFAULT NULL,
   `idbebidas` int(11) DEFAULT NULL,
   `idsobremesas` int(11) DEFAULT NULL,
@@ -106,6 +106,49 @@ CREATE TABLE `tbsobremesas` (
 INSERT INTO `tbsobremesas` (`idsobremesas`, `nomesobremesas`, `precUnitsobremesas`, `descsobremesas`, `imgsobremesas`) VALUES
 (3, 'Bolo de Chocolate', 8.00, NULL, 'sobremesa-bolo.png'),
 (4, 'Pudim', 9.99, NULL, 'sobremesa-pudim.png');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `tbbebidas`
+--
+ALTER TABLE `tbbebidas`
+  ADD PRIMARY KEY (`idbebidas`);
+
+--
+-- Índices de tabela `tbespetos`
+--
+ALTER TABLE `tbespetos`
+  ADD PRIMARY KEY (`idespetos`);
+
+--
+-- Índices de tabela `tbpedido`
+--
+ALTER TABLE `tbpedido`
+  ADD PRIMARY KEY (`idpedido`),
+  ADD UNIQUE KEY `idespetos` (`idespetos`),
+  ADD UNIQUE KEY `idbebidas` (`idbebidas`),
+  ADD UNIQUE KEY `idsobremesas` (`idsobremesas`);
+
+--
+-- Índices de tabela `tbsobremesas`
+--
+ALTER TABLE `tbsobremesas`
+  ADD PRIMARY KEY (`idsobremesas`);
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `tbpedido`
+--
+ALTER TABLE `tbpedido`
+  ADD CONSTRAINT `tbpedido_ibfk_1` FOREIGN KEY (`idsobremesas`) REFERENCES `tbsobremesas` (`idsobremesas`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbpedido_ibfk_2` FOREIGN KEY (`idespetos`) REFERENCES `tbespetos` (`idespetos`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbpedido_ibfk_3` FOREIGN KEY (`idbebidas`) REFERENCES `tbbebidas` (`idbebidas`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
