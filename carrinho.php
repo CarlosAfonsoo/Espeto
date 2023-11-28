@@ -26,13 +26,13 @@
         <li>Quantidade Total: <span id="quantidade-total">0</span></li>
         <li>Preço Total: R$ <span id="preco-total">0,00</span></li>
     </ul>
-    <!-- Altere o botão de confirmar pedido -->
-<button id="confirmar-pedido-btn" onclick="confirmarPedido()">Confirmar Pedido</button>
+    
+<button id="confirmar-pedido-btn" onclick="insirirDados()">Confirmar Pedido</button><!--Chama função para alterar o pedido -->
 
 <script>
-function confirmarPedido() {
+function insirirDados() {
     // Adicione a seguinte linha para redirecionar para a página de confirmação de pedido
-    window.location.href = 'php/confirmar_pedido.php';
+    window.location.href = 'dados_cliente.php';
 }
 </script>
 
@@ -50,6 +50,7 @@ function confirmarPedido() {
             
             foreach ($_SESSION['carrinho'] as $item) {
                 echo '<div class="item-carrinho">';
+                echo '<p>' . $item['img'] . '<p>';
                 echo '<p>ID: ' . $item['id'] . '</p>';
                 echo '<p>Tipo: ' . $item['tipo'] . '</p>';
                 echo '<p>Nome: ' . $item['nome'] . '</p>';

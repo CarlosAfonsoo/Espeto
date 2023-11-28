@@ -30,7 +30,7 @@
     <!-- Espetos -->
     <h3>Espetos</h3>
     <div class="cardapio-container">
-        <?php exibirCardapio('tbespetos'); ?>
+        <?php exibirCardapio('tbespetos'); ?><!-- função localizada no arquivo de scripts js -->
     </div>
 
     <!-- Sobremesas -->
