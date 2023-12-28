@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cacbecario{
+    background-color: rgb(49, 47, 47);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    border-bottom: 1px solid black;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.espetos{
+    display: flex;
+    width: 70%; /* Ajuste conforme necessário */
+    float: left; /* Alinha os espetos à esquerda */
+}
+
+.espetos button{
+    width: 97%;
+    height: 28px;
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgb(223, 205, 48);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    
+}
+
+.espetos button:hover{
+    background-color: rgb(184, 167, 15);
+}
+.espetos button:active{
+    background-color: rgb(128, 116, 11);
+}
+
+.espeCarne , .espeFrango{
+    margin-right: 30px;
+}
+
+.container h4{
+    font-size: 25px;
+}
+
+.espeCarne{
+    display: inline-block;
+}
+
+aside{
+    align-items: right;
+    overflow: hidden;
+    height: 500px;
+} 
+
+.carrinho {
+    width: 30%; 
+    float: right; 
+    position: relative;
+    bottom: 100px;
+} 
+
+.esspaco{
+    margin-top: 500px;
+    margin-bottom: 500px;
+}
+
+aside button{
+    width: 30%;
+    height: 28px;
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgb(223, 205, 48);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+aside button:hover{
+    background-color: rgb(184, 167, 15);
+}
+aside button:active{
+    background-color: rgb(128, 116, 11);
+}
+
+footer{
+    margin-top: 500px;
+    background-color: rgb(49, 47, 47);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    position: absolute; 
+    bottom: 0;
+    font-size: 18px;
+    width: 97%;
+}

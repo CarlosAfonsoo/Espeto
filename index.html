@@ -1,25 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="index_style.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <h1>Backend Espetos</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index_style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="cacbecario">
+        <div class="container">
+            <h1>Backend Espetos</h1>
+        </div>
+    </header>
+
+    <section class="conteudo">
+        <div class="container">
+            <h4>Espetos</h4>
+            <div class="espetos">
+                <div class="espeCarne">
+                    <img src="./imgs/espeto-carne.png" alt="Espeto de Carne">
+                    <p>Espeto de Carne</p>
+                    <p>R$8,00</p>
+                    <button onclick="adicionarAoCarrinho('Espeto de Carne', 8)">+</button>
+                </div>
+                <div class="espeFrango">
+                    <img src="./imgs/espeto-frango.png" alt="Espeto de Frango">
+                    <p>Espeto de Frango</p>
+                    <p>R$4,00</p>
+                    <button onclick="adicionarAoCarrinho('Espeto de Frango', 4)">+</button>
+                </div>
+                <div class="espeMisto">
+                    <img src="./imgs/espetoMisto.jpeg" alt="Espeto Misto">
+                    <p>Espeto de Misto</p>
+                    <p>R$12,00</p>
+                    <button onclick="adicionarAoCarrinho('Espeto Misto', 12)">+</button>
+                </div>
             </div>
-        </header>
-        <nav>
-            <div class="container">
-                <ul>
-                    <li>
-                        <a href=""></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </body>
+
+            <aside class="carrinho" id="carrinho">
+                <div class="container">
+                    <h4>Carrinho</h4>
+                    <div id="itensCarrinho"></div>
+                    <div id="totalCarrinho"></div>
+                    <button onclick="pagar()">Pagar</button>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <p> Todos direitos autorais Reservados a &copy; Carlos Eduardo</p>
+    </footer>
+
+    <script>
+        function adicionarAoCarrinho(nomeProduto, valorUnitario) {
+            // Crie um elemento de div para o item no carrinho
+            var itemCarrinho = document.createElement('div');
+            itemCarrinho.innerHTML = `<p>${nomeProduto} - R$${valorUnitario.toFixed(2)}</p>`;
+
+            // Adicione o item ao carrinho
+            document.getElementById('itensCarrinho').appendChild(itemCarrinho);
+
+            // Atualize o total no carrinho
+            atualizarTotalCarrinho(valorUnitario);
+        }
+
+        function atualizarTotalCarrinho(valorItem) {
+            // Obtenha o elemento do total do carrinho
+            var totalCarrinho = document.getElementById('totalCarrinho');
+
+            // Obtenha o valor atual do total
+            var valorTotal = parseFloat(totalCarrinho.dataset.valorTotal) || 0;
+
+            // Atualize o valor total
+            valorTotal += valorItem;
+            totalCarrinho.innerHTML = `<p>Total: R$${valorTotal.toFixed(2)}</p>`;
+            totalCarrinho.dataset.valorTotal = valorTotal;
+        }
+
+        function pagar() {
+            // Adicione aqui a lógica para processar o pagamento, se necessário
+            alert('Pagamento processado! Itens comprados.');
+        }
+    </script>
+</body>
 </html>
