@@ -43,7 +43,8 @@
                     <h4>Carrinho</h4>
                     <div id="itensCarrinho"></div>
                     <div id="totalCarrinho"></div>
-                    <button onclick="pagar()">Pagar</button>
+                    <button id="botaoEsvaziar" class="botao" onclick="esvaziarCarrinho()">Esvaziar Carrinho</button>
+                    <button onclick="pagar()" class="botao">Pagar</button>
                 </div>
             </aside>
         </div>
@@ -51,92 +52,9 @@
 
     <footer>
         <p> Todos direitos autorais Reservados a &copy; Carlos Eduardo</p>
-        <a href="./php/Exemplo1.php"> Consulta</a>
+        <a href="./php/exemplo.php"> Consulta</a>
     </footer>
 
-    <script>
-        // Array para armazenar os itens do carrinho
-        var carrinhoItens = [];
-
-        function adicionarAoCarrinho(nomeProduto, valorUnitario) {
-            // Verifique se o produto já está no carrinho
-            var itemCarrinho = document.getElementById('item_' + nomeProduto);
-            
-            if (itemCarrinho) {
-                // Se o produto já está no carrinho, atualize a quantidade
-                var quantidadeAtual = parseInt(itemCarrinho.dataset.quantidade) || 1;
-                quantidadeAtual++;
-                itemCarrinho.innerHTML = `<p>${nomeProduto} - R$${valorUnitario.toFixed(2)} - Quantidade: ${quantidadeAtual}</p>`;
-                itemCarrinho.dataset.quantidade = quantidadeAtual;
-
-                // Atualize o objeto no array
-                var index = carrinhoItens.findIndex(item => item.nome === nomeProduto);
-                carrinhoItens[index].quantidade = quantidadeAtual;
-            } else {
-                // Se o produto não está no carrinho, crie um novo elemento
-                itemCarrinho = document.createElement('div');
-                itemCarrinho.id = 'item_' + nomeProduto;
-                itemCarrinho.dataset.quantidade = 1;
-                itemCarrinho.innerHTML = `<p>${nomeProduto} - R$${valorUnitario.toFixed(2)} - Quantidade: 1</p>`;
-                document.getElementById('itensCarrinho').appendChild(itemCarrinho);
-
-                // Adicione um novo objeto ao array
-                carrinhoItens.push({
-                    nome: nomeProduto,
-                    quantidade: 1,
-                    precoUnitario: valorUnitario
-                });
-            }
-
-            // Atualize o total no carrinho
-            atualizarTotalCarrinho(valorUnitario);
-        }
-
-        function atualizarTotalCarrinho(valorItem) {
-            // Obtenha o elemento do total do carrinho
-            var totalCarrinho = document.getElementById('totalCarrinho');
-
-            // Obtenha o valor atual do total
-            var valorTotal = parseFloat(totalCarrinho.dataset.valorTotal) || 0;
-
-            // Atualize o valor total
-            valorTotal += valorItem;
-            totalCarrinho.innerHTML = `<p>Total: R$${valorTotal.toFixed(2)}</p>`;
-            totalCarrinho.dataset.valorTotal = valorTotal;
-        }
-
-        function pagar() {
-            // Verifica se há itens no carrinho
-            if (carrinhoItens.length === 0) {
-                alert('Carrinho vazio. Adicione itens antes de pagar.');
-                return;
-            }
-        
-            // Adicione aqui a lógica para processar o pagamento, se necessário
-            alert('Pagamento processado! Itens comprados.');
-        
-            // Realiza uma requisição AJAX para enviar os itens para o arquivo PHP
-            $.ajax({
-                url: 'php/Exemplo1.php',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(carrinhoItens),
-                success: function(response) {
-                    console.log('Itens enviados para o PHP com sucesso!');
-                    // Limpe o carrinho após o pagamento
-                    carrinhoItens = [];
-                    document.getElementById('itensCarrinho').innerHTML = '';
-                    document.getElementById('totalCarrinho').innerHTML = '<p>Total: R$0.00</p>';
-                    document.getElementById('totalCarrinho').dataset.valorTotal = 0;
-        
-                    // Redirecione o cliente para o arquivo PHP
-                    window.location.href = 'php/Exemplo1.php';
-                },
-                error: function(xhr, status, error) {
-                    console.error('Erro ao enviar dados para o PHP:', error);
-                }
-            });
-        }        
-    </script>
+    <script src="./js/logica.js"></script>
 </body>
 </html>

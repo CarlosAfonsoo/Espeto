@@ -1,17 +1,16 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
-.container{
+.container {
     width: 100%;
     max-width: 1200px;
     margin: auto;
 }
 
-.cacbecario{
+.cacbecario {
     background-color: rgb(49, 47, 47);
     color: rgb(255, 255, 255);
     text-align: center;
@@ -21,18 +20,18 @@ body{
     border-bottom: 1px solid black;
 }
 
-img{
+img {
     width: 150px;
     height: 150px;
 }
 
-.espetos{
+.espetos {
     display: flex;
-    width: 70%; /* Ajuste conforme necessário */
-    float: left; /* Alinha os espetos à esquerda */
+    width: 70%;
+    float: left;
 }
 
-.espetos button{
+.espetos button {
     width: 97%;
     height: 28px;
     border: 1px solid black;
@@ -41,47 +40,48 @@ img{
     background-color: rgb(223, 205, 48);
     color: rgb(0, 0, 0);
     font-size: 15px;
-    
 }
 
-.espetos button:hover{
+.espetos button:hover {
     background-color: rgb(184, 167, 15);
 }
-.espetos button:active{
+
+.espetos button:active {
     background-color: rgb(128, 116, 11);
 }
 
-.espeCarne , .espeFrango{
+.espeCarne,
+.espeFrango {
     margin-right: 30px;
 }
 
-.container h4{
+.container h4 {
     font-size: 25px;
 }
 
-.espeCarne{
+.espeCarne {
     display: inline-block;
 }
 
-aside{
+aside {
     align-items: right;
     overflow: hidden;
     height: 500px;
-} 
+}
 
 .carrinho {
-    width: 30%; 
-    float: right; 
+    width: 30%;
+    float: right;
     position: relative;
     bottom: 100px;
-} 
+}
 
-.esspaco{
+.esspaco {
     margin-top: 500px;
     margin-bottom: 500px;
 }
 
-aside button{
+aside button {
     width: 30%;
     height: 28px;
     border: 1px solid black;
@@ -92,20 +92,42 @@ aside button{
     font-size: 15px;
 }
 
-aside button:hover{
+aside button:hover {
     background-color: rgb(184, 167, 15);
 }
-aside button:active{
+
+aside button:active {
     background-color: rgb(128, 116, 11);
 }
 
-footer{
+.botao {
+    width: 40%;
+    height: 38px;
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgb(223, 205, 48);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.botao:hover {
+    background-color: rgb(184, 167, 15);
+}
+
+.botao:active {
+    background-color: rgb(128, 116, 11);
+}
+
+footer {
     margin-top: 500px;
     background-color: rgb(49, 47, 47);
     color: rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
-    position: absolute; 
+    position: absolute;
     bottom: 0;
     font-size: 18px;
     width: 97%;
