@@ -129,6 +129,36 @@ aside button:active,
     margin-bottom: 500px;
 }
 
+.itemCarrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.itemCarrinho p {
+    margin: 0;
+}
+
+.itemCarrinho button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(223, 205, 48);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.itemCarrinho button:hover {
+    background-color: rgb(184, 167, 15);
+}
+
+.itemCarrinho button:active {
+    background-color: rgb(128, 116, 11);
+}
+
 footer {
     background-color: rgb(49, 47, 47);
     color: rgb(255, 255, 255);
