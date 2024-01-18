@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index_style.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -16,45 +15,90 @@
 
     <section class="conteudo">
         <div class="container">
-            <h4>Espetos</h4>
-            <div class="espetos">
-                <div class="espeCarne">
-                    <img src="./imgs/espeto-carne.png" alt="Espeto de Carne">
-                    <p>Espeto de Carne</p>
-                    <p>R$8,00</p>
-                    <button onclick="adicionarAoCarrinho('Espeto de Carne', 8)">+</button>
+            <div class="produtos">
+                <h4>Espetos</h4>
+                <div class="espetos">
+                    <div class="espeCarne">
+                        <img src="./imgs/espeto-carne.png" alt="Espeto de Carne">
+                        <p>Espeto de Carne</p>
+                        <p>R$8,00</p>
+                        <button onclick="adicionarAoCarrinho('Espeto de Carne', 8)">+</button>
+                    </div>
+                    <div class="espeFrango">
+                        <img src="./imgs/espeto-frango.png" alt="Espeto de Frango">
+                        <p>Espeto de Frango</p>
+                        <p>R$4,00</p>
+                        <button onclick="adicionarAoCarrinho('Espeto de Frango', 4)">+</button>
+                    </div>
+                    <div class="espeMisto">
+                        <img src="./imgs/espetoMisto.jpeg" alt="Espeto Misto">
+                        <p>Espeto de Misto</p>
+                        <p>R$12,00</p>
+                        <button onclick="adicionarAoCarrinho('Espeto Misto', 12)">+</button>
+                    </div>
                 </div>
-                <div class="espeFrango">
-                    <img src="./imgs/espeto-frango.png" alt="Espeto de Frango">
-                    <p>Espeto de Frango</p>
-                    <p>R$4,00</p>
-                    <button onclick="adicionarAoCarrinho('Espeto de Frango', 4)">+</button>
+                <h4>Sobremesa</h4>
+                <div class="sobremesa">
+                    <div class="espeTortaCreme">
+                        <img src="./imgs/torta-creme.png" alt="Torta de Creme">
+                        <p>Torta de Creme</p>
+                        <p>R$10,00</p>
+                        <button onclick="adicionarAoCarrinho('Torta de Creme', 10)">+</button>
+                    </div>
+                    <div class="espeTortaChocolate">
+                        <img src="./imgs/torta-chocolate.png" alt="Torta de Chocolate">
+                        <p>Torta de Chocolate</p>
+                        <p>R$12,00</p>
+                        <button onclick="adicionarAoCarrinho('Torta de Chocolate', 12)">+</button>
+                    </div>
+                    <div class="espeTortaMorango">
+                        <img src="./imgs/torta-morango.png" alt="Torta de Morango">
+                        <p>Torta de Morango</p>
+                        <p>R$11,00</p>
+                        <button onclick="adicionarAoCarrinho('Torta de Morango', 11)">+</button>
+                    </div>
                 </div>
-                <div class="espeMisto">
-                    <img src="./imgs/espetoMisto.jpeg" alt="Espeto Misto">
-                    <p>Espeto de Misto</p>
-                    <p>R$12,00</p>
-                    <button onclick="adicionarAoCarrinho('Espeto Misto', 12)">+</button>
+                <h4>Bebidas</h4>
+                <div class="bebidas">
+                    <div class="espePepsi">
+                        <img src="./imgs/pepsi.png" alt="Pepsi 2L">
+                        <p>Pepsi 2L</p>
+                        <p>R$5,00</p>
+                        <button onclick="adicionarAoCarrinho('Pepsi 2L', 5)">+</button>
+                    </div>
+                    <div class="espeFantaLaranja">
+                        <img src="./imgs/fanta-laranja.png" alt="Fanta Laranja 2L">
+                        <p>Fanta Laranja 2L</p>
+                        <p>R$4,50</p>
+                        <button onclick="adicionarAoCarrinho('Fanta Laranja 2L', 4.5)">+</button>
+                    </div>
+                    <div class="espeCocaCola">
+                        <img src="./imgs/coca-cola.png" alt="Coca-Cola 2L">
+                        <p>Coca-Cola 2L</p>
+                        <p>R$5,50</p>
+                        <button onclick="adicionarAoCarrinho('Coca-Cola 2L', 5.5)">+</button>
+                    </div>
                 </div>
             </div>
-
-            <aside class="carrinho" id="carrinho">
-                <div class="container">
-                    <h4>Carrinho</h4>
-                    <div id="itensCarrinho"></div>
-                    <div id="totalCarrinho"></div>
-                    <button id="botaoEsvaziar" class="botao" onclick="esvaziarCarrinho()">Esvaziar Carrinho</button>
-                    <button onclick="pagar()" class="botao">Pagar</button>
-                </div>
-            </aside>
         </div>
+
+        <aside class="carrinho" id="carrinho">
+            <div class="container">
+                <h4>Carrinho</h4>
+                <div id="itensCarrinho"></div>
+                <div id="totalCarrinho"></div>
+                <button id="botaoEsvaziar" class="botao" onclick="esvaziarCarrinho()">Esvaziar Carrinho</button>
+                <button onclick="pagar()" class="botao">Pagar</button>
+            </div>
+        </aside>
     </section>
 
     <footer>
-        <p> Todos direitos autorais Reservados a &copy; Carlos Eduardo</p>
-        <a href="./php/exemplo.php"> Consulta</a>
+        <p>Todos direitos autorais Reservados a &copy; Carlos Eduardo</p>
     </footer>
+    
+    <script src="./js/teste.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <script src="./js/logica.js"></script>
 </body>
 </html>
